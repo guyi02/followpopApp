@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, style } from '@angular/core';
 
 import { AboutPage } from '../about/about';
 import { ContactPage } from '../contact/contact';
@@ -12,6 +12,7 @@ export class TabsPage {
   tab1Root = HomePage;
   tab2Root = AboutPage;
   tab3Root = ContactPage;
+  tab4Root = ContactPage;
 
   constructor() {
 
