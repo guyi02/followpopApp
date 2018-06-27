@@ -1,18 +1,68 @@
-<!--
-  Generated template for the MeupedidoPage page.
-
-  See http://ionicframework.com/docs/components/#navigation for more info on
-  Ionic pages and navigation.
--->
 <ion-header>
-
-  <ion-navbar>
-    <ion-title>meupedido</ion-title>
+  <ion-navbar color="primary">
+    <ion-title>Pedido</ion-title>
   </ion-navbar>
-
 </ion-header>
 
 
-<ion-content padding>
+<ion-content>
+  <ion-card class="cardColor">
+
+    <ion-row>
+      <ion-card-header>
+        <ion-img src="assets/imgs/face_img.png" width="70" height="70"></ion-img>
+      </ion-card-header>
+      <ion-card-content>
+        <h2>1000 Curtidas Facebook</h2>
+      </ion-card-content>
+    </ion-row>
+
+    <ion-list>
+      <a ion-item (tap)="showLink()">
+        <ion-icon name="link" item-start></ion-icon>
+        Clique para ver a Url
+      </a>
+
+      <button ion-item>
+        <ion-icon name="mail" item-start></ion-icon>
+        guyi__@hotmail.com
+      </button>
+
+      <button ion-item>
+        <ion-icon name="cash" item-start></ion-icon>
+        R$9,50
+      </button>
+
+      <button ion-item>
+        <ion-icon name="calendar" item-start></ion-icon>
+        26/06/2018
+      </button>
+
+      <button ion-item>
+        <ion-icon name="calculator" item-start></ion-icon>
+        1000
+      </button>
+
+      <button ion-item>
+        <ion-icon name="flag" item-start></ion-icon>
+        Br
+      </button>
+
+      <button ion-item>
+        <ion-icon name="stats" item-start></ion-icon>
+        pendente
+      </button>
+
+    </ion-list>
+  </ion-card>
+
+  <ion-row padding class="rowIcons">
+      <ion-col col-6>
+          <button style="margin: 0 auto" color="danger" ion-fab><ion-icon name="close-circle"></ion-icon></button>
+      </ion-col>
+      <ion-col col-6>
+          <button style="margin: 0 auto" ion-fab><ion-icon name="checkmark-circle"></ion-icon></button>
+      </ion-col>
+  </ion-row>
 
 </ion-content>
