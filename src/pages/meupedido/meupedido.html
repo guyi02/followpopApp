@@ -10,15 +10,17 @@
 
     <ion-row>
       <ion-card-header>
-        <ion-img *ngIf="tipo" src="assets/imgs/{{tipo}}.png" width="70" height="70"></ion-img>
+        <div *ngIf="tipo">
+          <ion-img  src="assets/imgs/{{tipo}}.png" width="70" height="70"></ion-img>
+        </div>
       </ion-card-header>
       <ion-card-content>
-        <h2>{{servico}}</h2>
+        <h2>{{(itens | async)?.servico}}</h2>
       </ion-card-content>
     </ion-row>
 
     <ion-list>
-      <a ion-item (tap)="showLink(link)">
+      <a ion-item (tap)="showLink(meuLink)">
         <ion-icon name="link" item-start></ion-icon>
         Clique para ver a Url
       </a>
@@ -30,27 +32,27 @@
 
       <button ion-item>
         <ion-icon name="cash" item-start></ion-icon>
-        R${{valor}}
+        R${{(itens | async)?.valor}}
       </button>
 
       <button ion-item>
         <ion-icon name="calendar" item-start></ion-icon>
-        {{data}}
+        {{(itens | async)?.data}}
       </button>
 
       <button ion-item>
         <ion-icon name="calculator" item-start></ion-icon>
-        {{quantidade}}
+        {{(itens | async)?.quantidade}}
       </button>
 
       <button ion-item>
         <ion-icon name="flag" item-start></ion-icon>
-        {{tipo}}
+        {{(itens | async)?.tipo}}
       </button>
 
       <button ion-item>
         <ion-icon name="stats" item-start></ion-icon>
-        {{status}}
+        {{(itens | async)?.status}}
       </button>
 
     </ion-list>
