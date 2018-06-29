@@ -28,8 +28,11 @@ export class MeupedidoPage {
   ionViewDidLoad() {
     this.itensCollection = this.db.doc('pedidos/' + this.id)
     this.itens = this.itensCollection.valueChanges()
-    this.itens.subscribe(s => { this.tipo = s['tipo']; this.meuLink = s['link'] })
-    
+    this.itens.subscribe(s => {
+      this.tipo = s['tipo'];
+      this.meuLink = s['link'];
+    })
+
   }
   showLink(link) {
     const alert = this.alert.create({
@@ -39,6 +42,7 @@ export class MeupedidoPage {
     });
     alert.present();
   }
+
 
 
 }

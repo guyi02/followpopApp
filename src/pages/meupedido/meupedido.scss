@@ -1,16 +1,20 @@
-ion-card-header{
-    margin: 0 auto;
+ion-card-header {
+  margin: 0 auto;
 }
 
-.cardcontent{
-    background-color: #EFF5F5
-}
-ion-card-content{
-    margin: auto auto
+.cardcontent {
+  background-color: #EFF5F5
 }
 
-.item-md{
-
-background-color: #92f4d7;
+ion-card-content {
+  margin: auto auto
 }
 
+.item-md {
+  background-color: #92f4d7;
+}
+
+.fab[mini]{
+    width: 80px;
+    height: 80px;
+}
