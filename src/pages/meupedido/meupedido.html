@@ -10,59 +10,63 @@
 
     <ion-row>
       <ion-card-header>
-        <ion-img src="assets/imgs/face_img.png" width="70" height="70"></ion-img>
+        <ion-img *ngIf="tipo" src="assets/imgs/{{tipo}}.png" width="70" height="70"></ion-img>
       </ion-card-header>
       <ion-card-content>
-        <h2>1000 Curtidas Facebook</h2>
+        <h2>{{servico}}</h2>
       </ion-card-content>
     </ion-row>
 
     <ion-list>
-      <a ion-item (tap)="showLink()">
+      <a ion-item (tap)="showLink(link)">
         <ion-icon name="link" item-start></ion-icon>
         Clique para ver a Url
       </a>
 
       <button ion-item>
         <ion-icon name="mail" item-start></ion-icon>
-        guyi__@hotmail.com
+        falta add celular ou email
       </button>
 
       <button ion-item>
         <ion-icon name="cash" item-start></ion-icon>
-        R$9,50
+        R${{valor}}
       </button>
 
       <button ion-item>
         <ion-icon name="calendar" item-start></ion-icon>
-        26/06/2018
+        {{data}}
       </button>
 
       <button ion-item>
         <ion-icon name="calculator" item-start></ion-icon>
-        1000
+        {{quantidade}}
       </button>
 
       <button ion-item>
         <ion-icon name="flag" item-start></ion-icon>
-        Br
+        {{tipo}}
       </button>
 
       <button ion-item>
         <ion-icon name="stats" item-start></ion-icon>
-        pendente
+        {{status}}
       </button>
 
     </ion-list>
   </ion-card>
 
   <ion-row padding class="rowIcons">
-      <ion-col col-6>
-          <button style="margin: 0 auto" color="danger" ion-fab><ion-icon name="close-circle"></ion-icon></button>
-      </ion-col>
-      <ion-col col-6>
-          <button style="margin: 0 auto" ion-fab><ion-icon name="checkmark-circle"></ion-icon></button>
-      </ion-col>
+    <ion-col col-6>
+      <button style="margin: 0 auto" color="danger" ion-fab>
+        <ion-icon name="close-circle"></ion-icon>
+      </button>
+    </ion-col>
+    <ion-col col-6>
+      <button style="margin: 0 auto" ion-fab>
+        <ion-icon name="checkmark-circle"></ion-icon>
+      </button>
+    </ion-col>
   </ion-row>
 
 </ion-content>

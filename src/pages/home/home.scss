@@ -1,27 +1,31 @@
-
-.myTitle{
-    text-align: center
-}
-.cardProducts{
-    border: solid 1px black
-}
-ion-img{
-    border-radius: 50%;
-    margin-left: -15px;
-}
-.cardColor{
-    background-color: #EFF5F5;
+.myTitle {
+  text-align: center
 }
 
-ion-card-content{
-    height: 90%;
-    padding: 0;
-    margin: 0
+.cardProducts {
+  border: solid 1px black
 }
-.divider1{
-    right: 10px;
 
+.imagem {
+  border-radius: 50%;
+  min-width: 45px;
+  min-height: 45px;
 }
-.divider2{
- left: 8px;
+
+.cardColor {
+  background-color: #EFF5F5;
+}
+
+ion-card-content {
+  height: 90%;
+  padding: 0;
+  margin: 0
+}
+
+.divider1 {
+  right: 30px;
+}
+
+.divider2 {
+  left: 5px;
 }
