@@ -12,10 +12,6 @@
   min-height: 45px;
 }
 
-.cardColor {
-  background-color: #EFF5F5;
-}
-
 ion-card-content {
   height: 90%;
   padding: 0;
@@ -28,4 +24,35 @@ ion-card-content {
 
 .divider2 {
   left: 5px;
+}
+
+
+
+.cardColor{
+    background-color: #92f4d7;
+}
+
+ion-card-content {
+  height: 90%;
+  padding: 0;
+  margin: 0
+
+}
+
+
+.calculator{
+
+background-color: aquamarine;    
+} 
+.chip-md > ion-icon{
+
+color: #0fc1d8;
+background-color: #fff; 
+
+}
+
+.chip-md{
+color:#fff;
+background: rgb(46, 237, 181);
+
 }
