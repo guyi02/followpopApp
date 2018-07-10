@@ -10,7 +10,7 @@ export class PainelProvider {
   }
 
   getAll() {
-    return this.db.collection('pedidos')
+    return this.db.collection('pedidos', ref => ref.orderBy('data', 'desc'))
       .snapshotChanges()
       .pipe(
         map(mapeado => {
