@@ -11,23 +11,36 @@
     <ion-row>
       <ion-card-header>
         <div *ngIf="tipo">
-          <ion-img  src="assets/imgs/{{tipo}}.png" width="70" height="70"></ion-img>
+          <img src="assets/imgs/{{tipo}}.png" class="imagem">
         </div>
       </ion-card-header>
-      <ion-card-content>
-        <h2>{{(itens | async)?.servico}}</h2>
-      </ion-card-content>
     </ion-row>
 
     <ion-list>
-      <a ion-item (tap)="showLink(meuLink)">
-        <ion-icon name="link" item-start></ion-icon>
-        Clique para ver a Url
+
+      <button ion-item>
+        <ion-icon name="person" item-start></ion-icon>
+        {{(itens | async)?.nome}}
+      </button>
+
+      <a ion-item href="https://api.whatsapp.com/send?phone=5513991353329&text=Olá, recebemos seu pedido efetuado no painel da Followpop.">
+        <ion-icon name="phone-portrait" item-start></ion-icon>
+        13991122174
       </a>
 
       <button ion-item>
-        <ion-icon name="mail" item-start></ion-icon>
-        falta add celular ou email
+        <ion-icon name="clipboard" item-start></ion-icon>
+        {{(itens | async)?.servico}}
+      </button>
+
+      <a ion-item (tap)="showLink(meuLink)">
+        <ion-icon name="link" item-start></ion-icon>
+        Ver link do cliente
+      </a>
+
+      <button ion-item>
+        <ion-icon name="calculator" item-start></ion-icon>
+        {{(itens | async)?.quantidade}}
       </button>
 
       <button ion-item>
@@ -37,17 +50,7 @@
 
       <button ion-item>
         <ion-icon name="calendar" item-start></ion-icon>
-        {{(itens | async)?.data}}
-      </button>
-
-      <button ion-item>
-        <ion-icon name="calculator" item-start></ion-icon>
-        {{(itens | async)?.quantidade}}
-      </button>
-
-      <button ion-item>
-        <ion-icon name="flag" item-start></ion-icon>
-        {{(itens | async)?.tipo}}
+        {{getData((itens | async)?.data.seconds)}}
       </button>
 
       <button ion-item>
@@ -61,12 +64,12 @@
   <ion-row padding class="rowIcons">
     <ion-col col-6>
       <button style="margin: 0 auto" color="danger" ion-fab mini>
-        <ion-icon name="close-circle"></ion-icon>
+          <img src="assets/imgs/cross.png" alt="" width="40">
       </button>
     </ion-col>
     <ion-col col-6>
       <button style="margin: 0 auto" ion-fab mini>
-        <ion-icon name="checkmark-circle"></ion-icon>
+        <img src="assets/imgs/arrow.png" alt="" width="80">
       </button>
     </ion-col>
   </ion-row>

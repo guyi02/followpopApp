@@ -35,12 +35,38 @@ export class MeupedidoPage {
 
   }
   showLink(link) {
-    const alert = this.alert.create({
-      title: 'Veja a Url!',
-      subTitle: link,
-      buttons: ['Fechar']
+    let alert = this.alert.create({
+      title: 'O link está certo?',
+      message: link,
+      inputs: [
+        {
+          name: 'Link',
+          placeholder: 'Novo Link'
+        }
+      ],
+      buttons: [
+        {
+          text: 'Fechar',
+          role: 'cancel',
+        },
+        {
+          text: 'Corrigir',
+          handler: data => {
+            console.log(data);
+          }
+        }
+      ]
     });
     alert.present();
+  }
+
+  getData(data) {
+    let newDate = new Date(data * 1000)
+    let a = newDate.getDate()
+    let b = newDate.getMonth() + 1
+    let c = newDate.getFullYear()
+    const DataNova = `${a}/${b}/${c}`
+    return DataNova
   }
 
 
