@@ -1,0 +1,57 @@
+<ion-header>
+  <ion-navbar color="primary">
+    <ion-title>Todos Pedidos</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <div padding>
+    <ion-segment [(ngModel)]="status">
+      <ion-segment-button value="emProcesso">
+        Em Processo
+      </ion-segment-button>
+      <ion-segment-button value="concluidos">
+        Concluidos
+      </ion-segment-button>
+      <ion-segment-button value="cancelados">
+        Cancelados
+      </ion-segment-button>
+    </ion-segment>
+  </div>
+
+
+  <div [ngSwitch]="status">
+    <ion-list *ngSwitchCase="'emProcesso'">
+      <ion-item class="listColor" *ngFor="let process of emProcesso | async">
+        <ion-avatar item-start *ngIf="process.tipo">
+          <img src="assets/imgs/{{process.tipo}}.png">
+        </ion-avatar>
+        <h2>{{process.nome}}</h2>
+        <p>{{process.servico}}</p>
+        <ion-note item-end>{{getData(process.data.seconds)}}</ion-note>
+      </ion-item>
+    </ion-list>
+
+    <ion-list *ngSwitchCase="'concluidos'">
+      <ion-item class="listColor" *ngFor="let conc of concluidos | async">
+        <ion-avatar item-start *ngIf="conc.tipo">
+          <img src="assets/imgs/{{conc.tipo}}.png">
+        </ion-avatar>
+        <h2>{{conc.nome}}</h2>
+        <p>{{conc.servico}}</p>
+        <ion-note item-end>{{getData(conc.data.seconds)}}</ion-note>
+      </ion-item>
+    </ion-list>
+
+    <ion-list *ngSwitchCase="'cancelados'">
+      <ion-item class="listColor" *ngFor="let cancel of cancelados | async">
+        <ion-avatar item-start *ngIf="cancel.tipo">
+          <img src="assets/imgs/{{cancel.tipo}}.png">
+        </ion-avatar>
+        <h2>{{cancel.nome}}</h2>
+        <p>{{cancel.servico}}</p>
+        <ion-note item-end>{{getData(cancel.data.seconds)}}</ion-note>
+      </ion-item>
+    </ion-list>
+  </div>
+</ion-content>

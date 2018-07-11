@@ -3,8 +3,9 @@ import { BrowserModule } from '@angular/platform-browser';
 import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
 import { MyApp } from './app.component';
 
-import { AboutPage } from '../pages/about/about';
-import { ContactPage } from '../pages/contact/contact';
+
+import { PedidosPage } from '../pages/pedidos/pedidos';
+import { FornecedoresPage } from '../pages/fornecedores/fornecedores';
 import { HomePage } from '../pages/home/home';
 import { TabsPage } from '../pages/tabs/tabs';
 
@@ -15,12 +16,14 @@ import { AngularFirestoreModule } from 'angularfire2/firestore';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { PainelProvider } from '../providers/painel/painel';
+import { SocialpanelProvider } from '../providers/socialpanel/socialpanel';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
     MyApp,
-    AboutPage,
-    ContactPage,
+    PedidosPage,
+    FornecedoresPage,
     HomePage,
     TabsPage
   ],
@@ -35,13 +38,14 @@ import { PainelProvider } from '../providers/painel/painel';
       storageBucket: "followpop-painel.appspot.com",
       messagingSenderId: "3435177807"
     }),
-    AngularFirestoreModule
+    AngularFirestoreModule,
+    HttpClientModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
-    AboutPage,
-    ContactPage,
+    PedidosPage,
+    FornecedoresPage,
     HomePage,
     TabsPage
   ],
@@ -49,7 +53,9 @@ import { PainelProvider } from '../providers/painel/painel';
     StatusBar,
     SplashScreen,
     { provide: ErrorHandler, useClass: IonicErrorHandler },
-    PainelProvider
+    PainelProvider,
+    SocialpanelProvider,
+    
   ]
 })
 export class AppModule { }

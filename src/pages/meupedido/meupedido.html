@@ -23,9 +23,9 @@
         {{(itens | async)?.nome}}
       </button>
 
-      <a ion-item href="https://api.whatsapp.com/send?phone=5513991353329&text=Olá, recebemos seu pedido efetuado no painel da Followpop.">
+      <a ion-item href="https://api.whatsapp.com/send?phone=55{{(itens | async)?.celular}}&text=Olá, recebemos seu pedido efetuado no painel da Followpop.">
         <ion-icon name="phone-portrait" item-start></ion-icon>
-        13991122174
+        {{(itens | async)?.celular}}
       </a>
 
       <button ion-item>
