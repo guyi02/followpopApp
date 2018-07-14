@@ -22,6 +22,19 @@ export class PainelProvider {
       )
   }
 
+  getAllUsers() {
+    return this.db.collection('users', ref => ref.orderBy('nome', 'asc'))
+      .snapshotChanges()
+      .pipe(
+        map(mapeado => {
+          return mapeado.map(res => ({
+            chave: res.payload.doc.id,
+            ...res.payload.doc.data()
+          }))
+        })
+      )
+  }
+
   getStatusConcluido() {
     return this.db.collection('pedidos', ref => ref.where('status', '==', 'concluido'))
       .snapshotChanges()

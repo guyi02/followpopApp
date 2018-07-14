@@ -18,6 +18,11 @@
 
     <ion-list>
 
+      <button *ngIf="(itens | async)?.orderFornecedor" ion-item>
+        <ion-icon name="person" item-start></ion-icon>
+        {{(itens | async)?.orderFornecedor}}
+      </button>
+
       <button ion-item>
         <ion-icon name="person" item-start></ion-icon>
         {{(itens | async)?.nome}}
@@ -61,10 +66,10 @@
     </ion-list>
   </ion-card>
 
-  <ion-row padding class="rowIcons">
+  <ion-row *ngIf="(itens | async)?.status == 'pendente'" padding class="rowIcons">
     <ion-col col-6>
       <button style="margin: 0 auto" color="danger" ion-fab mini>
-          <img src="assets/imgs/cross.png" alt="" width="40">
+        <img src="assets/imgs/cross.png" alt="" width="40">
       </button>
     </ion-col>
     <ion-col col-6>

@@ -8,6 +8,7 @@ import { Observable } from 'rxjs';
   templateUrl: 'pedidos.html'
 })
 export class PedidosPage {
+  status: string = 'emProcesso'
   concluidos: Observable<any>
   cancelados: Observable<any>
   emProcesso: Observable<any>
@@ -17,6 +18,10 @@ export class PedidosPage {
     this.cancelados = this.provider.getStatusCancelados()
     this.emProcesso = this.provider.getStatusEmProcesso()
 
+  }
+
+  getPedido(id) {
+    this.navCtrl.push('MeupedidoPage', id)   
   }
 
   getData(data) {

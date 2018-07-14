@@ -8,11 +8,11 @@
   <div class="divCard">
     <ion-card>
       <ion-card-header>
-        <img src="assets/imgs/social.png">
+        <img class="fornImg" src="assets/imgs/social.png">
       </ion-card-header>
       <ion-card-content>
         <ion-chip>
-          <ion-label>Credito: $10.00</ion-label>
+          <ion-label>Credito: ${{creditoSocial}}</ion-label>
         </ion-chip>
       </ion-card-content>
     </ion-card>
@@ -21,15 +21,20 @@
   <div class="divCard">
     <ion-card>
       <ion-card-header>
-        <img src="assets/imgs/instantismo.png">
+        <img class="fornImg" src="assets/imgs/instantismo.png">
       </ion-card-header>
       <ion-card-content>
         <ion-chip>
-          <ion-label>Credito: $8.00</ion-label>
+          <ion-label>Credito: ${{creditoInstantismo}}</ion-label>
         </ion-chip>
       </ion-card-content>
     </ion-card>
   </div>
+
+  <ion-card (tap)="verTaxas()">
+      <img src="assets/imgs/lucrosImg.jpg"/>
+      <div class="card-title">Margens de lucro</div>
+    </ion-card>
 
 </ion-content>
 

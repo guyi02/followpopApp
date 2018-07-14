@@ -22,36 +22,42 @@
 
   <div [ngSwitch]="status">
     <ion-list *ngSwitchCase="'emProcesso'">
-      <ion-item class="listColor" *ngFor="let process of emProcesso | async">
-        <ion-avatar item-start *ngIf="process.tipo">
-          <img src="assets/imgs/{{process.tipo}}.png">
-        </ion-avatar>
-        <h2>{{process.nome}}</h2>
-        <p>{{process.servico}}</p>
-        <ion-note item-end>{{getData(process.data.seconds)}}</ion-note>
-      </ion-item>
+      <div *ngFor="let process of emProcesso | async">
+        <ion-item class="listColor" (tap)="getPedido(process.chave)">
+          <ion-avatar item-start *ngIf="process.tipo">
+            <img src="assets/imgs/{{process.tipo}}.png">
+          </ion-avatar>
+          <h2>{{process.nome}}</h2>
+          <p>{{process.servico}}</p>
+          <ion-note item-end>{{getData(process.data.seconds)}}</ion-note>
+        </ion-item>
+      </div>
     </ion-list>
 
     <ion-list *ngSwitchCase="'concluidos'">
-      <ion-item class="listColor" *ngFor="let conc of concluidos | async">
-        <ion-avatar item-start *ngIf="conc.tipo">
-          <img src="assets/imgs/{{conc.tipo}}.png">
-        </ion-avatar>
-        <h2>{{conc.nome}}</h2>
-        <p>{{conc.servico}}</p>
-        <ion-note item-end>{{getData(conc.data.seconds)}}</ion-note>
-      </ion-item>
+      <div *ngFor="let conc of concluidos | async">
+        <ion-item class="listColor" (tap)="getPedido(conc.chave)">
+          <ion-avatar item-start *ngIf="conc.tipo">
+            <img src="assets/imgs/{{conc.tipo}}.png">
+          </ion-avatar>
+          <h2>{{conc.nome}}</h2>
+          <p>{{conc.servico}}</p>
+          <ion-note item-end>{{getData(conc.data.seconds)}}</ion-note>
+        </ion-item>
+      </div>
     </ion-list>
 
     <ion-list *ngSwitchCase="'cancelados'">
-      <ion-item class="listColor" *ngFor="let cancel of cancelados | async">
-        <ion-avatar item-start *ngIf="cancel.tipo">
-          <img src="assets/imgs/{{cancel.tipo}}.png">
-        </ion-avatar>
-        <h2>{{cancel.nome}}</h2>
-        <p>{{cancel.servico}}</p>
-        <ion-note item-end>{{getData(cancel.data.seconds)}}</ion-note>
-      </ion-item>
+      <div *ngFor="let cancel of cancelados | async">
+        <ion-item class="listColor" (tap)="getPedido(cancel.chave)">
+          <ion-avatar item-start *ngIf="cancel.tipo">
+            <img src="assets/imgs/{{cancel.tipo}}.png">
+          </ion-avatar>
+          <h2>{{cancel.nome}}</h2>
+          <p>{{cancel.servico}}</p>
+          <ion-note item-end>{{getData(cancel.data.seconds)}}</ion-note>
+        </ion-item>
+      </div>
     </ion-list>
   </div>
 </ion-content>

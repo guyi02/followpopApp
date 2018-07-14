@@ -18,6 +18,8 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 import { PainelProvider } from '../providers/painel/painel';
 import { SocialpanelProvider } from '../providers/socialpanel/socialpanel';
 import { HttpClientModule } from '@angular/common/http';
+import { InstantismoProvider } from '../providers/instantismo/instantismo';
+import { ClientesPage } from '../pages/clientes/clientes';
 
 @NgModule({
   declarations: [
@@ -25,7 +27,9 @@ import { HttpClientModule } from '@angular/common/http';
     PedidosPage,
     FornecedoresPage,
     HomePage,
-    TabsPage
+    TabsPage,
+    ClientesPage
+
   ],
   imports: [
     BrowserModule,
@@ -47,7 +51,8 @@ import { HttpClientModule } from '@angular/common/http';
     PedidosPage,
     FornecedoresPage,
     HomePage,
-    TabsPage
+    TabsPage,
+    ClientesPage
   ],
   providers: [
     StatusBar,
@@ -55,7 +60,7 @@ import { HttpClientModule } from '@angular/common/http';
     { provide: ErrorHandler, useClass: IonicErrorHandler },
     PainelProvider,
     SocialpanelProvider,
-    
+    InstantismoProvider
   ]
 })
 export class AppModule { }

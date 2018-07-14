@@ -17,7 +17,7 @@ export class SocialpanelProvider {
 
   }
 
-  getCredits() {
+  getCreditsSocial() {
     return this.http.post<any>(`${this.api}?key=${this.key}&action=balance`, {headers: this.header})
   }
 
