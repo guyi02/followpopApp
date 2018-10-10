@@ -16,6 +16,9 @@
       <ion-segment-button value="cancelados">
         Cancelados
       </ion-segment-button>
+      <ion-segment-button value="parcial">
+        Parcial
+      </ion-segment-button>
     </ion-segment>
   </div>
 
@@ -23,20 +26,21 @@
   <div [ngSwitch]="status">
     <ion-list *ngSwitchCase="'emProcesso'">
       <div *ngFor="let process of emProcesso | async">
-        <ion-item class="listColor" (tap)="getPedido(process.chave)">
+        <ion-item no-lines class="listColor" (tap)="getPedido(process.chave)">
           <ion-avatar item-start *ngIf="process.tipo">
             <img src="assets/imgs/{{process.tipo}}.png">
           </ion-avatar>
           <h2>{{process.nome}}</h2>
           <p>{{process.servico}}</p>
           <ion-note item-end>{{getData(process.data.seconds)}}</ion-note>
+          <ion-note item-end>id: 1112454545</ion-note>
         </ion-item>
       </div>
     </ion-list>
 
     <ion-list *ngSwitchCase="'concluidos'">
       <div *ngFor="let conc of concluidos | async">
-        <ion-item class="listColor" (tap)="getPedido(conc.chave)">
+        <ion-item no-lines class="listColor" (tap)="getPedido(conc.chave)">
           <ion-avatar item-start *ngIf="conc.tipo">
             <img src="assets/imgs/{{conc.tipo}}.png">
           </ion-avatar>
@@ -49,13 +53,26 @@
 
     <ion-list *ngSwitchCase="'cancelados'">
       <div *ngFor="let cancel of cancelados | async">
-        <ion-item class="listColor" (tap)="getPedido(cancel.chave)">
+        <ion-item no-lines class="listColor" (tap)="getPedido(cancel.chave)">
           <ion-avatar item-start *ngIf="cancel.tipo">
             <img src="assets/imgs/{{cancel.tipo}}.png">
           </ion-avatar>
           <h2>{{cancel.nome}}</h2>
           <p>{{cancel.servico}}</p>
           <ion-note item-end>{{getData(cancel.data.seconds)}}</ion-note>
+        </ion-item>
+      </div>
+    </ion-list>
+
+    <ion-list *ngSwitchCase="'parcial'">
+      <div *ngFor="let parciais of parcial | async">
+        <ion-item no-lines class="listColor" (tap)="getPedido(parciais.chave)">
+          <ion-avatar item-start *ngIf="parciais.tipo">
+            <img src="assets/imgs/{{parciais.tipo}}.png">
+          </ion-avatar>
+          <h2>{{parciais.nome}}</h2>
+          <p>{{parciais.servico}}</p>
+          <ion-note item-end>{{getData(parciais.data.seconds)}}</ion-note>
         </ion-item>
       </div>
     </ion-list>

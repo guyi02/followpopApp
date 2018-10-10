@@ -10,7 +10,7 @@
 
   <div class="divCard" *ngFor="let meusPedidos of pedidos | async">
     <ion-card (tap)="viewPedido(meusPedidos.chave)">
-      <ion-card-header>
+      <ion-card-header float-left>
         <img class="imagem" *ngIf="meusPedidos.tipo" src="assets/imgs/{{meusPedidos.tipo}}.png">
       </ion-card-header>
       <ion-card-content>
@@ -21,13 +21,13 @@
           <ion-label>Qtd: {{meusPedidos.quantidade}}</ion-label>
         </ion-chip>
         <ion-chip>
-          <ion-label>{{meusPedidos.servico}}</ion-label>
-        </ion-chip>
-        <ion-chip>
           <ion-label>{{getData(meusPedidos.data.seconds)}}</ion-label>
         </ion-chip>
         <ion-chip>
           <ion-label>Vlr: R${{meusPedidos.valor}}</ion-label>
+        </ion-chip>
+        <ion-chip>
+          <ion-label>{{meusPedidos.servico}}</ion-label>
         </ion-chip>
       </ion-card-content>
     </ion-card>

@@ -72,5 +72,18 @@ export class PainelProvider {
       )
   }
 
+  getStatusParcial() {
+    return this.db.collection('pedidos', ref => ref.where('status', '==', 'parcial'))
+      .snapshotChanges()
+      .pipe(
+        map(mapeado => {
+          return mapeado.map(res => ({
+            chave: res.payload.doc.id,
+            ...res.payload.doc.data()
+          }))
+        })
+      )
+  }
+
 
 }

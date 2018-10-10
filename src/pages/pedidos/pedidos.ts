@@ -12,11 +12,13 @@ export class PedidosPage {
   concluidos: Observable<any>
   cancelados: Observable<any>
   emProcesso: Observable<any>
+  parcial: Observable<any>
 
   constructor(public navCtrl: NavController, private provider: PainelProvider) {
     this.concluidos = this.provider.getStatusConcluido()
     this.cancelados = this.provider.getStatusCancelados()
     this.emProcesso = this.provider.getStatusEmProcesso()
+    this.parcial = this.provider.getStatusParcial()
 
   }
 
